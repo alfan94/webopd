@@ -1,84 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Rumah Sakit Sadikin</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Swiper CSS untuk scroll -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
-</head>
-<body class="bg-gray-100">
-
-  <!-- NAVBAR  -->
-  <nav id="navbar" class="fixed top-0 left-0 w-full z-20 transition-all duration-500 bg-transparent">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex justify-between h-16 items-center">
-        <!-- Brand nama -->
-<img src="{{ asset('logo.png') }}" width="100px" height="100px">        
-        <!-- Desktop Menu -->
-        <div class="hidden md:flex space-x-6 items-center">
-          <a href="#" class="text-white hover:text-blue-400">Beranda</a>
-
-          <!-- Profile Dropdown -->
-          <div class="relative group">
-            <button class="text-white hover:text-blue-400 flex items-center">
-              Profile ▼
-            </button>
-            <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded-lg w-40">
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Sejarah</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Visi Misi</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Struktur Organisasi</a>
-            </div>
-          </div>
-
-          <!-- Pelayanan Dropdown -->
-          <div class="relative group">
-            <button class="text-white hover:text-blue-400 flex items-center">
-              Pelayanan ▼
-            </button>
-            <div class="absolute hidden group-hover:block bg-white shadow-lg mt-2 rounded-lg w-40">
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Rawat Jalan</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">IGD</a>
-              <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Laboratorium</a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Mobile Button -->
-        <button id="mobile-btn" class="md:hidden text-white text-2xl">☰</button>
-      </div>
-    </div>
-
-    <!-- Mobile Menu -->
-    <div id="mobile-menu" class="hidden md:hidden bg-white shadow-lg">
-      <a href="#" class="block px-4 py-2 text-gray-700 hover:bg-blue-600 hover:text-white">Beranda</a>
-      
-      <details class="border-t border-gray-200">
-        <summary class="px-4 py-2 cursor-pointer text-gray-700 hover:bg-gray-100">Profile</summary>
-        <div class="pl-6 pb-2">
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">Sejarah</a>
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">Visi Misi</a>
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">Struktur Organisasi</a>
-        </div>
-      </details>
-
-      <details class="border-t border-gray-200">
-        <summary class="px-4 py-2 cursor-pointer text-gray-700 hover:bg-gray-100">Pelayanan</summary>
-        <div class="pl-6 pb-2">
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">Rawat Jalan</a>
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">IGD</a>
-          <a href="#" class="block py-1 text-gray-600 hover:text-blue-600">Laboratorium</a>
-        </div>
-      </details>
-    </div>
-  </nav>
-
-  <!-- HERO SWIPER -->
+@include('navbar.navbar')
+  <!-- HERO SWIPER untuk membuat gambar jadi slider -->
   <section class="relative w-full h-screen overflow-hidden">
     <div class="swiper h-full">
       <div class="swiper-wrapper">
-        <!-- Slide 1 -->
+        <!-- Slide 1 bagian  -->
         <div class="swiper-slide relative">
           <img src="https://picsum.photos/id/1015/1600/900" class="w-full h-full object-cover" alt="">
           <div class="absolute inset-0 bg-black/40"></div>
@@ -155,11 +80,95 @@
     </div>
   </div>
 </section>
-  <!-- Swiper JS -->
+
+<div class="max-w-5xl mx-auto my-10 p-6">
+  <div class="grid md:grid-cols-2 gap-6 items-center bg-white shadow-lg rounded-2xl overflow-hidden">
+    <!-- Gambar -->
+    <div class="h-full">
+      <img src="https://www.stieykpn.ac.id/cni-content/uploads/modules/pages/20180115100741.jpg" 
+           alt="Visi Misi" 
+           class="w-full h-full object-cover">
+    </div>
+    
+    <!-- Konten -->
+    <div class="p-6">
+      <h2 class="text-3xl font-bold text-gray-800 mb-4">Visi & Misi</h2>
+      
+      <div class="mb-6">
+        <h3 class="text-xl font-semibold text-blue-600">Visi</h3>
+        <p class="text-gray-600 mt-2">
+          Menjadi rumah sakit terdepan dengan pelayanan kesehatan yang profesional, modern, dan berlandaskan nilai kemanusiaan.
+        </p>
+      </div>
+      
+      <div>
+        <h3 class="text-xl font-semibold text-green-600">Misi</h3>
+        <ul class="list-disc list-inside text-gray-600 mt-2 space-y-1">
+          <li>Memberikan pelayanan kesehatan yang cepat, tepat, dan ramah.</li>
+          <li>Meningkatkan kualitas SDM melalui pelatihan berkelanjutan.</li>
+          <li>Mengutamakan keselamatan pasien dalam setiap tindakan medis.</li>
+          <li>Mengembangkan teknologi kesehatan yang modern.</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="bg-gradient-to-r from-blue-700 to-blue-900 text-white">
+  <div class="max-w-7xl mx-auto px-6 py-10 grid md:grid-cols-4 gap-8">
+    
+    <!-- Logo & Deskripsi -->
+    <div>
+      <h2 class="text-2xl font-bold mb-3">RSUD Sadikin</h2>
+      <p class="text-sm text-gray-200">
+<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d127667.3149962615!2d99.9854718433594!3d-0.594437299999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2fd4e27ee01cde39%3A0x16c42211261ad57f!2sRSUD%20Dr.%20Sadikin%20Kota%20Pariaman!5e0!3m2!1sid!2sid!4v1756694720826!5m2!1sid!2sid" width="200" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>      </p>
+    </div>
+    
+    <!-- Navigasi -->
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Navigasi</h3>
+      <ul class="space-y-2">
+        <li><a href="#" class="hover:text-yellow-400">Tentang Kami</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Layanan</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Dokter</a></li>
+        <li><a href="#" class="hover:text-yellow-400">Berita</a></li>
+      </ul>
+    </div>
+    
+    <!-- Kontak -->
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Kontak</h3>
+      <ul class="space-y-2 text-sm">
+        <li>📍 Jl. sdfdsf No. 123, Kota Sehat</li>
+        <li>📞 (021) 1234-5678</li>
+        <li>✉️ info@rsudsadikin.go.id</li>
+      </ul>
+    </div>
+    
+    <!-- Sosial Media  ganti jika ada yang cocok -->
+    <div>
+      <h3 class="font-semibold text-lg mb-3">Ikuti Kami</h3>
+      <div class="flex space-x-4">
+        <a href="#" class="hover:text-yellow-400">🌐</a>
+        <a href="#" class="hover:text-yellow-400">📘</a>
+        <a href="#" class="hover:text-yellow-400">📷</a>
+        <a href="#" class="hover:text-yellow-400">🐦</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Copyright  untuk pembuat-->
+  <div class="border-t border-gray-600 text-center py-4 text-sm text-gray-300">
+    © 2025 Diskominfo Kota Pariaman. Semua Hak Dilindungi.
+  </div>
+</footer>
+
+
+  <!-- Swiper JS untuk akses  -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
   <script>
-    // Swiper init
+    // Swiper init untuk menjalankan swiper header gambar slider
     const swiper = new Swiper('.swiper', {
       loop: true,
       autoplay: {
@@ -176,12 +185,12 @@
       },
     });
 
-    // Toggle mobile menu
+    // Toggle mobile menu sewaktu memamkai hp
     document.getElementById("mobile-btn").addEventListener("click", function() {
       document.getElementById("mobile-menu").classList.toggle("hidden");
     });
 
-    // Navbar scroll effect
+    // Navbar scroll effect ketika di scroll otoamtis warna navbar beruba
     window.addEventListener("scroll", function() {
       const nav = document.getElementById("navbar");
       if (window.scrollY > 50) {
