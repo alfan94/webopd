@@ -14,6 +14,9 @@ use Illuminate\Support\Facades\Route;
 | be assigned to the "web" middleware group. Make something great!
 |
 */
+route::get('testing',function(){
+    return view('layout.template');
+});
 
 Route::get('/dsfdf', function () {
     return view('welcome');
