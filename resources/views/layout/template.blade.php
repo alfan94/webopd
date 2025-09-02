@@ -19,7 +19,7 @@
     <!-- inject:css -->
     <link rel="stylesheet" href="{{asset('template/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
-    <link rel="shortcut icon" href="images/favicon.png" />
+    <link rel="shortcut icon" href="{{asset('template/images/favicon.png')}}" />
 
     <!-- datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">

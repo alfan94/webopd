@@ -5,39 +5,48 @@
     <div class="col-12 grid-margin stretch-card">
         <div class="card">
         <div class="card-body">
-            <h4 class="card-title">Tambah Data Berita</h4>
-            <form class="forms-sample" action="{{ route('berita.store') }}" method="POST" enctype="multipart/form-data">
+            <h4 class="card-title">Edit Data Berita</h4>
+            <form class="forms-sample" action="{{ route('berita.update', $berita->id) }}" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="form-group">
                 <label for="judul">Judul</label>
-                <input type="text" class="form-control" id="judul" name="judul" placeholder="Judul">
+                <input type="text" class="form-control" id="judul" name="judul" value="{{ old('judul', $berita->judul) }}">
             </div>
             <div class="form-group">
                 <label for="keterangan">Konten Berita</label>
-                <textarea class="form-control" rows="4" id="keterangan" name="keterangan" placeholder="Konten Berita"></textarea>
+                <textarea class="form-control" rows="4" id="keterangan" name="keterangan">{{ old('keterangan', $berita->keterangan) }}</textarea>
             </div>
             <div class="form-group">
                 <label for="tgl_publish">Tanggal Publish</label>
-                <input type="date" class="form-control" id="tgl_publish" name="tgl_publish" placeholder="Tanggal Publish">
+                <input type="date" class="form-control" id="tgl_publish" name="tgl_publish" value="{{ old('tgl_publish', $berita->tgl_publish) }}">
             </div>
             <div class="form-group">
                 <label>Gambar</label>
                 <input type="file" name="img" class="file-upload-default" id="img">
                 <div class="input-group col-xs-12">
-                <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
-                <span class="input-group-append">
-                    <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
-                </span>
+                    <input type="text" class="form-control file-upload-info" disabled placeholder="Upload Image">
+                    <span class="input-group-append">
+                        <button class="file-upload-browse btn btn-primary" type="button">Upload</button>
+                    </span>
                 </div>
+
+                @if($berita->img) 
+                    <div class="mt-2">
+                        <img src="{{ asset('img_berita/'.$berita->img) }}" alt="Gambar Berita" width="150" class="img-thumbnail">
+                    </div>
+                @endif
             </div>
             <div class="form-group">
                 <label for="author">Author</label>
-                    <select name="author" id="author" class="form-control" required>
-                        <option value="" disabled selected>Pilih Author</option> 
-                        @foreach($author as $au)
-                            <option value="{{$au->id}}">{{$au->nama}}</option>
-                        @endforeach
-                    </select>
+                <select name="author" id="author" class="form-control" required>
+                    <option value="" disabled>Pilih Author</option>
+                    @foreach($author as $au)
+                        <option value="{{ $au->id }}" 
+                            {{ old('author', $berita->author) == $au->id ? 'selected' : '' }}>
+                            {{ $au->nama }}
+                        </option>
+                    @endforeach
+                </select>
                 @error('author')
                 <div class="invalid-feedback">
                     {{$message}}

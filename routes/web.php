@@ -26,6 +26,9 @@ Route::get('/dsfdf', function () {
 Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.index');
 Route::get('/berita/create', [App\Http\Controllers\BeritaController::class, 'create'])->name('berita.create');
 Route::post('/berita/store', [App\Http\Controllers\BeritaController::class, 'store'])->name('berita.store');
+Route::delete('/berita/{id}', [App\Http\Controllers\BeritaController::class,'destroy'])->name('berita.destroy');
+Route::get('/berita/{id}/edit', [App\Http\Controllers\BeritaController::class, 'edit'])->name('berita.edit');
+Route::post('/berita/{id}/update', [App\Http\Controllers\BeritaController::class, 'update'])->name('berita.update');
 
 ROute::get('/',[LandingController::class,'index'])->name('landing');
 

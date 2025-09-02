@@ -64,6 +64,40 @@
                 {data: 'action', name: 'action', orderable: false, searchable: false, class: 'text-center'},
             ]
         });
+
+        window.confirmDelete = function(id) {
+            Swal.fire({
+                title: "Are you sure?",
+                text: "You won't be able to revert this!",
+                icon: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#3085d6",
+                cancelButtonColor: "#d33",
+                confirmButtonText: "Yes, delete it!"
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    deleteData(id);
+                }
+            });
+        }
+
+        function deleteData(id) {
+            $.ajax({
+                url: "{{ route('berita.destroy', '') }}/" + id,
+                type: 'POST',
+                data: {
+                    _method: 'DELETE',
+                    _token: '{{ csrf_token() }}',
+                },
+                success: function(response) {
+                    Swal.fire("Deleted!", "Your data has been deleted.", "success");
+                    table.ajax.reload();
+                },
+                error: function(xhr) {
+                    Swal.fire("Failed!", "There was an error deleting the data.", "error");
+                }
+            });
+        }
     });
 </script>
 @endpush
