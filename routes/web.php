@@ -22,6 +22,11 @@ Route::get('/dsfdf', function () {
     return view('welcome');
 });
 
+//berita
+Route::get('/berita', [App\Http\Controllers\BeritaController::class, 'index'])->name('berita.index');
+Route::get('/berita/create', [App\Http\Controllers\BeritaController::class, 'create'])->name('berita.create');
+Route::post('/berita/store', [App\Http\Controllers\BeritaController::class, 'store'])->name('berita.store');
+
 ROute::get('/',[LandingController::class,'index'])->name('landing');
 
 Route::get('/dashboard', function () {

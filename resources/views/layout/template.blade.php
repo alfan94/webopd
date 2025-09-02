@@ -20,21 +20,71 @@
     <link rel="stylesheet" href="{{asset('template/css/vertical-layout-light/style.css')}}">
     <!-- endinject -->
     <link rel="shortcut icon" href="images/favicon.png" />
+
+    <!-- datatable -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+
+    <!-- SweetAlert2 -->
+	<link rel="stylesheet" href="{{ asset('template/css/sweetalert.css') }}"> 
 </head>
 
 <body>
-    @include('layout.navbar')
-    <!-- partial -->
-    <!-- partial:partials/_sidebar.html -->
-    @include('layout.sidebar')
-    <!-- partial -->
-    @include('layout.pages')
-    <!-- main-panel ends -->
-    </div>
-    <!-- page-body-wrapper ends -->
+    <div class="container-scroller">
+      <!-- partial:partials/_navbar.html -->
+      @include('layout.navbar')
+      <!-- partial -->
+      <div class="container-fluid page-body-wrapper">
+        @include('layout.sidebar')
+        <!-- partial -->
+        <div class="main-panel">
+        @yield('content')
+          <!-- content-wrapper ends -->
+          @include('layout.footer')
+        </div>
+        <!-- main-panel ends -->
+      </div>
+      <!-- page-body-wrapper ends -->
     </div>
     <!-- container-scroller -->
 
+    <script src="{{ asset('template/js/sweetalert.min.js') }}"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
+		@if(Session::has('success'))
+		<script>
+			Swal.fire({
+				icon: 'success',
+				title: 'Berhasil',
+				text: '{{ Session::get('success') }}'
+			});
+		</script>
+		@endif
+		@if(Session::has('warning'))
+		<script>
+			Swal.fire({
+				icon: 'warning',
+				title: 'Peringatan',
+				text: '{{ Session::get('warning') }}'
+			});
+		</script>
+		@endif
+		@if(Session::has('error'))
+		<script>
+			Swal.fire({
+				icon: 'error',
+				title: 'Error',
+				text: '{{ Session::get('error') }}'
+			});
+		</script>
+		@endif
+		@if(Session::has('info'))
+		<script>
+			Swal.fire({
+				icon: 'info',
+				title: 'Info',
+				text: '{{ Session::get('info') }}'
+			});
+		</script>
+		@endif
     <!-- plugins:js -->
     <script src="{{asset('template/vendors/js/vendor.bundle.base.js')}}"></script>
     <!-- endinject -->
@@ -56,6 +106,18 @@
     <script src="{{asset('template/js/dashboard.js')}}"></script>
     <script src="{{asset('template/js/Chart.roundedBarCharts.js')}}"></script>
     <!-- End custom js for this page-->
+
+    @stack('scripts')
+
+    <!-- jQuery -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- DataTables JS -->
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>
+
+     <!-- datatable -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.7/js/jquery.dataTables.min.js"></script>
 </body>
 
 </html>
