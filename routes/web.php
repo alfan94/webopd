@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\FotoDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -36,6 +37,14 @@ Route::post('/pegawai/store', [App\Http\Controllers\PegawaiController::class, 's
 Route::delete('/pegawai/{id}', [App\Http\Controllers\PegawaiController::class,'destroy'])->name('pegawai.destroy');
 Route::get('/pegawai/edit', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('posts.edit');
 ROute::get('/',[LandingController::class,'index'])->name('landing');
+
+
+
+//foto slider
+Route::get('admin/slider',[FotoDashboardController::class,'index'])->name('landing');
+Route::post('admin/slider/tambah',[FotoDashboardController::class,'create'])->name('landing');
+Route::put('admin/slider/update/{id}',[FotoDashboardController::class,'update'])->name('landing');
+Route::delete('admin/slider/hapus/{id}',[FotoDashboardController::class,'hapus'])->name('landing');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
