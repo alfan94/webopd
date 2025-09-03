@@ -39,9 +39,9 @@
             </li>
             <li class="nav-item">
                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Poli</a></li> -->
-                 <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                 <a class="nav-link"  aria-expanded="false" aria-controls="charts" href="{{ route('poli.index') }}">
                     <i class="icon-bar-graph menu-icon"></i>
-                    <span class="menu-title">Poli</span>
+                    <span class="menu-title">Poliklinik</span>
                     <!-- <i class="menu-arrow"></i> -->
                 </a>
                 <!-- <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
