@@ -30,6 +30,12 @@ Route::delete('/berita/{id}', [App\Http\Controllers\BeritaController::class,'des
 Route::get('/berita/{id}/edit', [App\Http\Controllers\BeritaController::class, 'edit'])->name('berita.edit');
 Route::post('/berita/{id}/update', [App\Http\Controllers\BeritaController::class, 'update'])->name('berita.update');
 
+//poli
+Route::get('/poli', [App\Http\Controllers\PoliController::class, 'index'])->name('poli.index');
+Route::get('/poli/create', [App\Http\Controllers\PoliController::class, 'create'])->name('poli.create');
+Route::post('/poli/store', [App\Http\Controllers\PoliController::class, 'store'])->name('poli.store');
+Route::delete('/poli/{id}', [App\Http\Controllers\PoliController::class,'destroy'])->name('poli.destroy');
+
 ROute::get('/',[LandingController::class,'index'])->name('landing');
 
 Route::get('/dashboard', function () {
