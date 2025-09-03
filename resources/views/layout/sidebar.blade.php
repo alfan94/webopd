@@ -61,9 +61,12 @@
                     <span class="menu-title">SDM</span>
                     <i class="menu-arrow"></i>
                 </a>
-                <div class="collapse" id="tables">
+                <div class="collapse {{ request()->routeIs('pegawai.*') ? 'show' : '' }}" id="tables">
                     <ul class="nav flex-column sub-menu">
-                        <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Pegawai</a></li>
+                        <li class="nav-item"> 
+                            <a class="nav-link {{ request()->routeIs('pegawai.index') ? 'active' : '' }}" href="{{ route('pegawai.index') }}">
+                                Pegawai</a>
+                            </li>
                         <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Dokter</a></li>
                     </ul>
                 </div>
