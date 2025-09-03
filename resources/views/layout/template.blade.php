@@ -23,9 +23,13 @@
 
     <!-- datatable -->
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.7/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="{{asset('ckeditor/ckeditor5.css')}}">
+
+    <script src="{{asset('ckeditor/ckeditor5.js')}}"></script>
 
     <!-- SweetAlert2 -->
 	<link rel="stylesheet" href="{{ asset('template/css/sweetalert.css') }}"> 
+  <script src="https://cdn.ckeditor.com/ckeditor5/34.0.0/classic/ckeditor.js"></script>
 </head>
 
 <body>
