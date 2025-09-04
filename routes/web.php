@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\LandingController;
+use App\Http\Controllers\FotoDashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -55,6 +56,14 @@ Route::get('/jadwal-dokter/{id}', [App\Http\Controllers\JadwalDokterController::
 
 
 ROute::get('/',[LandingController::class,'index'])->name('landing');
+
+
+
+//foto slider
+Route::get('admin/slider',[FotoDashboardController::class,'index'])->name('landing');
+Route::post('admin/slider/tambah',[FotoDashboardController::class,'create'])->name('landing');
+Route::put('admin/slider/update/{id}',[FotoDashboardController::class,'update'])->name('landing');
+Route::delete('admin/slider/hapus/{id}',[FotoDashboardController::class,'hapus'])->name('landing');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
