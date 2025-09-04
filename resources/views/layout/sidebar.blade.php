@@ -17,7 +17,7 @@
                         <!-- <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Slider</a></li>
                         <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Dropdowns</a></li>
                         <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Typography</a></li> -->
-                        <li class="nav-item"> <a class="nav-link" href="pages/ui-features/buttons.html">Slider</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ url('admin/slider') }}">Slider</a></li>
                         <li class="nav-item"> <a class="nav-link" href="pages/ui-features/dropdowns.html">Profil</a></li>
                         <li class="nav-item"> <a class="nav-link" href="pages/ui-features/typography.html">Kontak</a></li>
                     </ul>
@@ -39,9 +39,9 @@
             </li>
             <li class="nav-item">
                 <!-- <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Poli</a></li> -->
-                 <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
+                 <a class="nav-link"  aria-expanded="false" aria-controls="charts" href="{{ route('poli.index') }}">
                     <i class="icon-bar-graph menu-icon"></i>
-                    <span class="menu-title">Poli</span>
+                    <span class="menu-title">Poliklinik</span>
                     <!-- <i class="menu-arrow"></i> -->
                 </a>
                 <!-- <a class="nav-link" data-toggle="collapse" href="#charts" aria-expanded="false" aria-controls="charts">
@@ -67,7 +67,7 @@
                             <a class="nav-link {{ request()->routeIs('pegawai.index') ? 'active' : '' }}" href="{{ route('pegawai.index') }}">
                                 Pegawai</a>
                             </li>
-                        <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Dokter</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('dokter.index') }}">Dokter</a></li>
                     </ul>
                 </div>
             </li>
