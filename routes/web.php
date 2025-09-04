@@ -65,6 +65,13 @@ Route::delete('/inovasi/{id}', [App\Http\Controllers\InovasiController::class,'d
 Route::get('/inovasi/{id}/edit', [App\Http\Controllers\InovasiController::class, 'edit'])->name('inovasi.edit');
 Route::post('/inovasi/{id}/update', [App\Http\Controllers\InovasiController::class, 'update'])->name('inovasi.update');
 
+Route::get('/penunjang', [App\Http\Controllers\PenunjangController::class, 'index'])->name('penunjang.index');
+Route::get('/penunjang/create', [App\Http\Controllers\PenunjangController::class, 'create'])->name('penunjang.create');
+Route::post('/penunjang/store', [App\Http\Controllers\PenunjangController::class, 'store'])->name('penunjang.store');
+Route::delete('/penunjang/{id}', [App\Http\Controllers\PenunjangController::class,'destroy'])->name('penunjang.destroy');
+Route::get('/penunjang/{id}/edit', [App\Http\Controllers\PenunjangController::class, 'edit'])->name('penunjang.edit');
+Route::post('/penunjang/{id}/update', [App\Http\Controllers\PenunjangController::class, 'update'])->name('penunjang.update');
+
 ROute::get('/',[LandingController::class,'index'])->name('landing');
 
 
