@@ -41,6 +41,19 @@ Route::get('/pegawai/create', [App\Http\Controllers\PegawaiController::class, 'c
 Route::post('/pegawai/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('pegawai.store');
 Route::delete('/pegawai/{id}', [App\Http\Controllers\PegawaiController::class,'destroy'])->name('pegawai.destroy');
 Route::get('/pegawai/edit', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('posts.edit');
+
+//dokter
+Route::get('/dokter', [App\Http\Controllers\DokterController::class, 'index'])->name('dokter.index');
+Route::get('/dokter/create', [App\Http\Controllers\DokterController::class, 'create'])->name('dokter.create');
+Route::post('/dokter/store', [App\Http\Controllers\DokterController::class, 'store'])->name('dokter.store');
+Route::delete('/dokter/{id}', [App\Http\Controllers\DokterController::class,'destroy'])->name('dokter.destroy');
+Route::get('/dokter/{id}/edit', [App\Http\Controllers\DokterController::class, 'edit'])->name('dokter.edit');
+Route::post('/dokter/{id}/update', [App\Http\Controllers\DokterController::class, 'update'])->name('dokter.update');
+Route::post('/jadwal-dokter', [App\Http\Controllers\JadwalDokterController::class, 'store'])->name('jadwal.store');
+Route::get('/jadwal-dokter/{id}', [App\Http\Controllers\JadwalDokterController::class, 'getJadwal'])->name('jadwal.get');
+
+
+
 ROute::get('/',[LandingController::class,'index'])->name('landing');
 
 Route::get('/dashboard', function () {

@@ -67,7 +67,7 @@
                             <a class="nav-link {{ request()->routeIs('pegawai.index') ? 'active' : '' }}" href="{{ route('pegawai.index') }}">
                                 Pegawai</a>
                             </li>
-                        <li class="nav-item"> <a class="nav-link" href="pages/tables/basic-table.html">Dokter</a></li>
+                        <li class="nav-item"> <a class="nav-link" href="{{ route('dokter.index') }}">Dokter</a></li>
                     </ul>
                 </div>
             </li>
