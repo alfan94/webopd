@@ -85,7 +85,7 @@
                             </a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link {{ request()->routeIs('inovasi.*') ? 'active' : '' }}" href="#">
+                            <a class="nav-link {{ request()->routeIs('inovasi') ? 'active' : '' }}" href="{{ route('inovasi.index') }}">
                                 Inovasi
                             </a>
                         </li>

@@ -34,9 +34,17 @@ Route::get('/pegawai', [App\Http\Controllers\PegawaiController::class, 'index'])
 Route::get('/pegawai/create', [App\Http\Controllers\PegawaiController::class, 'create'])->name('pegawai.create');
 Route::post('/pegawai/store', [App\Http\Controllers\PegawaiController::class, 'store'])->name('pegawai.store');
 Route::delete('/pegawai/{id}', [App\Http\Controllers\PegawaiController::class,'destroy'])->name('pegawai.destroy');
-Route::get('/pegawai/edit', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('posts.edit');
-ROute::get('/',[LandingController::class,'index'])->name('landing');
+Route::get('/pegawai/{id}/edit', [App\Http\Controllers\PegawaiController::class, 'edit'])->name('pegawai.edit');
+Route::post('/pegawai/{id}/update', [App\Http\Controllers\PegawaiController::class, 'update'])->name('pegawai.update');
 
+Route::get('/inovasi', [App\Http\Controllers\InovasiController::class, 'index'])->name('inovasi.index');
+Route::get('/inovasi/create', [App\Http\Controllers\InovasiController::class, 'create'])->name('inovasi.create');
+Route::post('/inovasi/store', [App\Http\Controllers\InovasiController::class, 'store'])->name('inovasi.store');
+Route::delete('/inovasi/{id}', [App\Http\Controllers\InovasiController::class,'destroy'])->name('inovasi.destroy');
+Route::get('/inovasi/{id}/edit', [App\Http\Controllers\InovasiController::class, 'edit'])->name('inovasi.edit');
+Route::post('/inovasi/{id}/update', [App\Http\Controllers\InovasiController::class, 'update'])->name('inovasi.update');
+
+ROute::get('/',[LandingController::class,'index'])->name('landing');
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
